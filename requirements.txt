@@ -5,7 +5,9 @@ aiohttp==3.13.3
 aiosignal==1.4.0
 annotated-types==0.7.0
 attrs==25.4.0
+beautifulsoup4==4.14.3
 certifi==2026.1.4
+charset-normalizer==3.4.4
 colorama==0.4.6
 frozenlist==1.8.0
 idna==3.11
@@ -16,7 +18,10 @@ propcache==0.4.1
 pydantic==2.12.5
 pydantic_core==2.41.5
 python-dotenv==1.2.1
+requests==2.32.5
+soupsieve==2.8.2
 typing-inspection==0.4.2
 typing_extensions==4.15.0
+urllib3==2.6.3
 win32_setctime==1.2.0
 yarl==1.22.0
