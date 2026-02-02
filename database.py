@@ -28,3 +28,10 @@ class Database:
             ''')
 
         conn.commit()
+
+    def create_user(self, user_info: list):
+        with self.connection() as conn:
+            cursor = conn.execute(
+                'INSERT INTO users (user_id, first_name, last_name, user_name, language) VALUES (?, ?, ?, ?, ?)'
+            )
+            conn.commit()
