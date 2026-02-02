@@ -18,12 +18,8 @@ dp = Dispatcher()
 
 @dp.message(Command("start"))
 async def command_start_handler(message: Message):
-    await message.answer("Привет! Я эхо-бот!")
+    await message.answer("Привет! Я рассказываю анекдоты!\nИспользуй:\n/start\n/anekdot")
 
-
-# @dp.message()
-# async def echo(message: Message):
-#     await message.answer(message.text)
 
 @dp.message(Command("anekdot"))
 async def send_anekdot(message: Message):
