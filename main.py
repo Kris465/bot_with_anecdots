@@ -18,6 +18,7 @@ dp = Dispatcher()
 
 @dp.message(Command("start"))
 async def command_start_handler(message: Message):
+    logger.info(message.from_user.id)
     await message.answer("Привет! Я рассказываю анекдоты!\nИспользуй:\n/start\n/anekdot")
 
 
@@ -42,6 +43,7 @@ async def main():
                rotation="3 days")
 
     bot = Bot(token=TOKEN)
+    logger.info("Бот создан... ")
     await dp.start_polling(bot)
 
 
