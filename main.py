@@ -10,20 +10,22 @@ from aiogram import Bot, Dispatcher
 from aiogram.filters import Command
 from aiogram.types import Message
 
+from database import Database
+
 
 load_dotenv(find_dotenv())
 TOKEN = os.getenv("TOKEN")
 dp = Dispatcher()
+database = Database()
 
 
 @dp.message(Command("start"))
 async def command_start_handler(message: Message):
-    logger.info(message.from_user.id)
-    logger.info(message.from_user.first_name)
-    logger.info(message.from_user.last_name)
-    logger.info(message.from_user.username)
-    logger.info(message.from_user.language_code)
-    
+    database.create_user([message.from_user.id,
+                          message.from_user.first_name,
+                          message.from_user.last_name,
+                          message.from_user.username,
+                          message.from_user.language_code])
     await message.answer("Привет! Я рассказываю анекдоты!\nИспользуй:\n/start\n/anekdot")
 
 
